@@ -8,9 +8,9 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://uqydee02jbf0ezch:Bgc2NFHR7QfHH7Rg3Nbo@blllauphmiwvzznhol62-mysql.services.clever-cloud.com:3306/blllauphmiwvzznhol62?serverTimezone=Europe/Paris" />
-			<property name="javax.persistence.jdbc.user" value="uqydee02jbf0ezch" />
-			<property name="javax.persistence.jdbc.password" value="Bgc2NFHR7QfHH7Rg3Nbo" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://uehkejsfanv2sjpp:QdTdnkOcnXex13pRjReL@bt19hn8ajpa6b51tt83e-mysql.services.clever-cloud.com:3306/bt19hn8ajpa6b51tt83e?serverTimezone=Europe/Paris" />
+			<property name="javax.persistence.jdbc.user" value="uehkejsfanv2sjpp" />
+			<property name="javax.persistence.jdbc.password" value="QdTdnkOcnXex13pRjReL" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.dialect"
