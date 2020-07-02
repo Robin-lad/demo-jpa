@@ -42,22 +42,25 @@ public class TestJpa {
 		l3.setTitre("Du plaisir dans la cuisine");
 		em.persist(l3);
 
-		
-
 		TypedQuery<Livre> query = em.createQuery("SELECT l FROM Livre l WHERE titre='Germinal'", Livre.class);
 		List<Livre> results = query.getResultList();
-		
+
 		TypedQuery<Livre> query2 = em.createQuery("SELECT l FROM Livre l WHERE auteur='Jules Verne'", Livre.class);
 		List<Livre> results2 = query2.getResultList();
 
 		System.out.println(results);
 		System.out.println(results2);
-		
+
 		Livre l4 = em.find(Livre.class, 6);
 		em.remove(l4);
-		
-		
-		et.commit();
+
+		TypedQuery<Livre> query3 = em.createQuery("SELECT l FROM Livre l", Livre.class);
+		List<Livre> results3 = query3.getResultList();
+		for (int i = 0; i < results3.size(); i++) {
+			System.out.println(results3.get(i).getTitre() + " " + results3.get(i).getAuteur());
+		}
+
+			et.commit();
 		em.close();
 
 	}
