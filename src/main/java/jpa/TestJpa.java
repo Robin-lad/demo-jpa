@@ -60,7 +60,7 @@ public class TestJpa {
 			System.out.println(results3.get(i).getTitre() + " " + results3.get(i).getAuteur());
 		}
 
-			et.commit();
+		et.commit();
 		em.close();
 
 	}
