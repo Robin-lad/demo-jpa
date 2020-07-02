@@ -3,14 +3,26 @@
  */
 package banque.entites;
 
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+
 /**
  * @author robin
  *
  */
+@Embeddable
 public class Adresse {
+	
+	@Column(name = "NUMERO")
 	private int numero;
+	
+	@Column(name = "RUE")
 	private String rue;
+	
+	@Column(name = "CODE_POSTAL")
 	private int codePostal;
+	
+	@Column(name = "VILLE")
 	private String ville;
 	
 	public Adresse() {

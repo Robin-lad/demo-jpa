@@ -3,11 +3,19 @@
  */
 package banque.entites;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * @author robin
  *
  */
+@Entity
+@Table(name="BANQUE")
 public class Banque {
+	
+	@Column(name = "NOM")
 	private String nom;
 
 	public Banque() {

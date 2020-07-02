@@ -8,13 +8,49 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://uehkejsfanv2sjpp:QdTdnkOcnXex13pRjReL@bt19hn8ajpa6b51tt83e-mysql.services.clever-cloud.com:3306/bt19hn8ajpa6b51tt83e?serverTimezone=Europe/Paris" />
-			<property name="javax.persistence.jdbc.user" value="uehkejsfanv2sjpp" />
-			<property name="javax.persistence.jdbc.password" value="QdTdnkOcnXex13pRjReL" />
-			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mysql://uehkejsfanv2sjpp:QdTdnkOcnXex13pRjReL@bt19hn8ajpa6b51tt83e-mysql.services.clever-cloud.com:3306/bt19hn8ajpa6b51tt83e?serverTimezone=Europe/Paris" />
+			<property name="javax.persistence.jdbc.user"
+				value="uehkejsfanv2sjpp" />
+			<property name="javax.persistence.jdbc.password"
+				value="QdTdnkOcnXex13pRjReL" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.show_sql" value="true" />
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.MySQL8Dialect" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="banque"
+		transaction-type="RESOURCE_LOCAL">
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>banque.entite.Banque</class>
+		<class>banque.entite.Client</class>
+		<class>banque.entite.Compte</class>
+		<class>banque.entite.LivretA</class>
+		<properties>
+			<!-- desactiver l'autodetection des classes de type @Entity -->
+			<property name="hibernate.archive.autodetection" value="" />
+			<!-- Activation de la génération des tables manquantes uniquement -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<!-- Drop and create à chaque redémarrage -->
+			<property
+				name="javax.persistence.schema-generation.database.action"
+				value="drop-and-create" />
+
+			<!-- Affichage des requêtes SQL -->
+			<property name="hibernate.show_sql" value="true" />
+			<!-- Paramètres d'accès à la BDD -->
+			<property name="javax.persistence.jdbc.url"
+
+				value="jdbc:mysql://uzmmtuzjyfbe7vkk:6K9yjkNoUeoKZkHpY6aW@bqmezdtq5acaq3t176u1-mysql.services.clever-cloud.com:3306/bqmezdtq5acaq3t176u1?serverTimezone=Europe/Paris" />
+			<property name="javax.persistence.jdbc.user" value="uzmmtuzjyfbe7vkk" />
+			<property name="javax.persistence.jdbc.password" value="6K9yjkNoUeoKZkHpY6aW" />
+			<property name="javax.persistence.jdbc.driver"
+				value="com.mysql.jdbc.Driver" />
+
 		</properties>
 	</persistence-unit>
 </persistence>

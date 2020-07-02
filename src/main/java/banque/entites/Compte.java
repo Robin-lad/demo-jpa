@@ -3,16 +3,28 @@
  */
 package banque.entites;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * @author robin
  *
  */
+@Entity
+@Table(name="COMPTE")
 public class Compte {
+	
+	@Column(name="NUMERO")
 	private int numero;
+	
+	@Column(name="SOLDE")
 	private double solde;
+	
 	public Compte() {
 		super();
 	}
+	
 	public Compte(int numero, double solde) {
 		super();
 		this.numero = numero;

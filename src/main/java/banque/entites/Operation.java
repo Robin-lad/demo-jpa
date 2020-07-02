@@ -5,13 +5,25 @@ package banque.entites;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * @author robin
  *
  */
+@Entity
+@Table(name="OPERATION")
 public class Operation {
+	
+	@Column(name="DATE")
 	private LocalDateTime date;
+	
+	@Column(name="MONTANT")
 	private double montant;
+	
+	@Column(name="MOTIF")
 	private String motif;
 	
 	public Operation() {
