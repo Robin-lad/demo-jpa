@@ -5,10 +5,13 @@ package banque.entites;
 
 import java.time.LocalDate;
 
+import javax.persistence.Entity;
+
 /**
  * @author robin
  *
  */
+@Entity
 public class AssuranceVie extends Compte {
 	
 	private LocalDate dateFin;
@@ -18,17 +21,6 @@ public class AssuranceVie extends Compte {
 	 * 
 	 */
 	public AssuranceVie() {
-		// TODO Auto-generated constructor stub
-	}
-
-	/** Constructeur
-	 * @param numero
-	 * @param solde
-	 */
-	public AssuranceVie(int numero, double solde, LocalDate dateFin, double taux) {
-		super(numero, solde);
-		this.dateFin=dateFin;
-		this.taux=taux;
 	}
 
 	/**

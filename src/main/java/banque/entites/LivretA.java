@@ -3,10 +3,13 @@
  */
 package banque.entites;
 
+import javax.persistence.Entity;
+
 /**
  * @author robin
  *
  */
+@Entity
 public class LivretA extends Compte {
 
 	private double taux;
@@ -15,15 +18,6 @@ public class LivretA extends Compte {
 	 * 
 	 */
 	public LivretA() {
-	}
-
-	/** Constructeur
-	 * @param numero
-	 * @param solde
-	 */
-	public LivretA(int numero, double solde, double taux) {
-		super(numero, solde);
-		this.taux=taux;
 	}
 
 	/**

@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "CLIENT")
-public class Client {
+public class ClientA {
 	/** id id */
 	@Id
 	@Column(name = "ID")
@@ -40,7 +40,7 @@ public class Client {
 	 * Constructeur
 	 * 
 	 */
-	public Client() {
+	public ClientA() {
 		super();
 		lEmpruntsClient = new ArrayList<>();
 	}
@@ -52,7 +52,7 @@ public class Client {
 	 * @param nom
 	 * @param prenom
 	 */
-	public Client(int id, String nom, String prenom) {
+	public ClientA(int id, String nom, String prenom) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -68,7 +68,7 @@ public class Client {
 	 * @param prenom
 	 * @param lEmpruntsClient
 	 */
-	public Client(int id, String nom, String prenom, List<Emprunt> lEmpruntsClient) {
+	public ClientA(int id, String nom, String prenom, List<Emprunt> lEmpruntsClient) {
 		super();
 		this.id = id;
 		this.nom = nom;

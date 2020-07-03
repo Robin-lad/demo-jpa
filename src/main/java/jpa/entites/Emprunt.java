@@ -40,10 +40,10 @@ public class Emprunt {
 	@Column(name = "DELAI")
 	private int delai;
 
-	/** idClient id du client qui a emprunté le livre */
+	/** Client client qui a emprunté le livre */
 	@ManyToOne
 	@JoinColumn(name = "ID_CLIENT")
-	private Client client;
+	private ClientA client;
 
 	/** lLivres liste des livres emprunté par le client */
 	@ManyToMany(mappedBy = "lEmprunts")
@@ -67,7 +67,7 @@ public class Emprunt {
 	 * @param delai
 	 * @param idClient
 	 */
-	public Emprunt(int id, LocalDate dateDebut, LocalDate dateFin, int delai, Client client) {
+	public Emprunt(int id, LocalDate dateDebut, LocalDate dateFin, int delai, ClientA client) {
 		super();
 		this.id = id;
 		this.dateDebut = dateDebut;
@@ -87,7 +87,7 @@ public class Emprunt {
 	 * @param idClient
 	 * @param lLivres
 	 */
-	public Emprunt(int id, LocalDate dateDebut, LocalDate dateFin, int delai, Client client, List<Livre> lLivres) {
+	public Emprunt(int id, LocalDate dateDebut, LocalDate dateFin, int delai, ClientA client, List<Livre> lLivres) {
 		super();
 		this.id = id;
 		this.dateDebut = dateDebut;
@@ -174,7 +174,7 @@ public class Emprunt {
 	 * 
 	 * @return the idClient
 	 */
-	public Client getIdClient() {
+	public ClientA getIdClient() {
 		return client;
 	}
 
@@ -183,7 +183,7 @@ public class Emprunt {
 	 * 
 	 * @param idClient the idClient to set
 	 */
-	public void setIdClient(Client client) {
+	public void setIdClient(ClientA client) {
 		this.client = client;
 	}
 

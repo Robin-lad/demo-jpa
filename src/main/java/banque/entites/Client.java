@@ -4,10 +4,18 @@
 package banque.entites;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -17,6 +25,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="CLIENT")
 public class Client {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "ID")
+	private int id;
 	
 	@Column(name = "NOM")
 	private String nom;
@@ -30,15 +43,16 @@ public class Client {
 	@Embedded
 	private Adresse adresse;
 	
+	@ManyToOne
+	@JoinColumn(name="ID_BANQUE")
+	private Banque banque;
+	
+	@ManyToMany(mappedBy = "lClient")
+	private List<Compte> lCompte;
+	
 	public Client() {
 		super();
-	}
-
-	public Client(String nom, String prenom, LocalDate dateNaissance) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.dateNaissance = dateNaissance;
+		lCompte = new ArrayList<>();
 	}
 
 	/**
@@ -103,6 +117,34 @@ public class Client {
 	 */
 	public void setAdresse(Adresse adresse) {
 		this.adresse = adresse;
+	}
+
+	/**
+	 * Getter
+	 * @return the banque
+	 */
+	public Banque getBanque() {
+		return banque;
+	}
+
+	/**
+	 * Setter
+	 * @param banque the banque to set
+	 */
+	public void setBanque(Banque banque) {
+		this.banque = banque;
+	}
+	
+	public void addCompte(Compte c) {
+		this.lCompte.add(c);
+	}
+
+	/**
+	 * Getter
+	 * @return the lCompte
+	 */
+	public List<Compte> getlCompte() {
+		return lCompte;
 	}
 	
 	
